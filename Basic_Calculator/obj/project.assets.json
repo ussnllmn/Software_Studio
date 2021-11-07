@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mero Asebi\\Downloads\\Basic_Calculator\\Basic_Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\Mero Asebi\\Documents\\GitHub\\Software_Studio\\Basic_Calculator\\Basic_Calculator.csproj",
       "projectName": "Basic_Calculator",
-      "projectPath": "C:\\Users\\Mero Asebi\\Downloads\\Basic_Calculator\\Basic_Calculator.csproj",
+      "projectPath": "C:\\Users\\Mero Asebi\\Documents\\GitHub\\Software_Studio\\Basic_Calculator\\Basic_Calculator.csproj",
       "packagesPath": "C:\\Users\\Mero Asebi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mero Asebi\\Downloads\\Basic_Calculator\\obj\\",
+      "outputPath": "C:\\Users\\Mero Asebi\\Documents\\GitHub\\Software_Studio\\Basic_Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mero Asebi\\AppData\\Roaming\\NuGet\\NuGet.Config"

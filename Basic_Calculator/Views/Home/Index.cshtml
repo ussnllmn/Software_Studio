@@ -1,8 +1,85 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center index-box">
+  <h1 class="display-4">Welcome to Basic Calculator</h1>
+  <div class="calculator">
+    <h5>Calculator</h5>
+    <input type="text" id="mini-display" disabled value="" />
+    <input type="text" id="display" disabled value="0" />
+
+    <div class="numpad">
+      <div id="col1">
+        <button onclick="numpad('7')">7</button>
+        <button onclick="numpad('8')">8</button>
+        <button onclick="numpad('9')">9</button>
+        <button onclick="operatorPad('÷')">÷</button>
+        <button onclick="cancel()">DEL</button>
+
+      </div>
+
+      <div id="col2">
+        <button onclick="numpad('4')">4</button>
+        <button onclick="numpad('5')">5</button>
+        <button onclick="numpad('6')">6</button>
+        <button onclick="operatorPad('-')">-</button>
+        <button onclick="allClear()">AC</button>
+      </div>
+
+      <div id="col3">
+        <button onclick="numpad('1')">1</button>
+        <button onclick="numpad('2')">2</button>
+        <button onclick="numpad('3')">3</button>
+        <button onclick="operatorPad('+')">+</button>
+        <button onclick="calculate()" id="calculate-btn" style="background-color: #c0362c;">=</button>
+      </div>
+
+      <div id="col4">
+        <button onclick="numpad('0')" id="zero-btn">0</button>
+        <button onclick="numpad('.')">.</button>
+        <button onclick="operatorPad('x')">x</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  var xmlhttp = new XMLHttpRequest();
+  var miniDisplay = document.getElementById("mini-display");
+  var display = document.getElementById("display");
+
+  function numpad(number) {
+    miniDisplay.value = miniDisplay.value + number;
+  }
+
+  function operatorPad(operator) {
+    miniDisplay.value = miniDisplay.value + operator;
+  }
+
+  function allClear() {
+    miniDisplay.value = '';
+    display.value = '0';
+  }
+
+  function cancel() {
+    var temp = miniDisplay.value;
+    miniDisplay.value = temp.slice(0, -1);
+  }
+
+  function calculate() {
+    display.value = "Calculating . . ."
+    let text = miniDisplay.value
+    text = text.replace(/\+/g, "%2B"); //replace + with %2B
+    text = text.replace('÷', "/");
+    text = text.replace('x', '*')
+
+    xmlhttp.open("GET", "https://localhost:5001/Home/Calculate?prop=" + text);
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        display.value = xmlhttp.responseText;
+      }
+    }
+    xmlhttp.send();
+  }
+</script>

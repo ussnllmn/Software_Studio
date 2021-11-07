@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Basic Calculator</h1>
+</div>
+
+<html>
+<body>
+    <br />
+    
+    <table id="calculator">
+            <input type="text" id="txtResult" disabled >
+    	<br/>
+        <tr>
+            <td><input type="button" value="1" /></td>
+            <td><input type="button" value="2" /></td>
+            <td><input type="button" value="3" /></td>
+            <td><input type="button" value="+" /></td>
+        </tr>
+    	<br/>
+        <tr>
+            <td><input type="button" value="4" /></td>
+            <td><input type="button" value="5" /></td>
+            <td><input type="button" value="6" /></td>
+            <td><input type="button" value="-" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" /></td>
+            <td><input type="button" value="8" /></td>
+            <td><input type="button" value="9" /></td>
+            <td><input type="button" value="*" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" /></td>
+            <td><input type="button" value="C" /></td>
+            <td><input type="button" value="=" /></td>
+            <td><input type="button" value="/" /></td>
+        </tr>
+    </table>
+    <br/>
+    <input type="button" id="getExpressions" value="Clear" />
+</body>
+
