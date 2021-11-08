@@ -46,7 +46,7 @@
   <div class="clear"> 
     <br/>
       <button onclick="Display.value = '';
-                       Cache.value ='';">
+                       Cache ='';">
                        CLEAR
       </button>
   </div>
@@ -55,19 +55,19 @@
 <script>
   var xmlhttp = new XMLHttpRequest();
   var Display = document.getElementById("Display");
-  var Cache = document.value(null)
+  var Cache = 0;
 
   function NumPad(number) {
-    Cache.value =  Cache.value + number;
+    Cache =  Cache + number;
     Display.value = Display.value + number;}
 
   function OpePad(operator) {
-    Cache.value =  Cache.value +  operator;
+    Cache =  Cache +  operator;
     Display.value = '';}
   
   function CalPad() {
-    let text = Cache.value;
-    xmlhttp.open("GET", "https://localhost:5001/Home/CalPad?prop=" + text);
+    let send = Cache;
+    xmlhttp.open("GET", "https://localhost:5001/Home/CalPad?prop=" + send);
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         Display.value = xmlhttp.responseText;}}
