@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BasicCal.Models;
+using System.Collections;
+using System.Text.RegularExpressions;
+using System.Data;
 
 namespace BasicCal.Controllers
 {
@@ -22,7 +25,11 @@ namespace BasicCal.Controllers
         {
             return View();
         }
-
+        public IActionResult CalPad(String prop)
+        {
+        var result = new DataTable().Compute(prop, null);   
+        return Content(result.ToString(), "text/plain");
+        }
         public IActionResult Privacy()
         {
             return View();
