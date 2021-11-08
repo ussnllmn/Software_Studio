@@ -25,16 +25,16 @@ namespace BasicCal.Controllers
         {
             return View();
         }
-        public IActionResult CalPad(String prop)
-      {
+        public IActionResult CalPad(String prop){
+
         try{
           var result = new DataTable().Compute(prop, null);   
-          return Content(result.ToString());
-        }
+          return Content(result.ToString());}
+
         catch (SyntaxErrorException){
-          return Content("Syntax error");
+          return Content("Syntax error");}
+          
         }
-      }
         public IActionResult Privacy()
         {
             return View();
