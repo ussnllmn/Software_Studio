@@ -27,8 +27,9 @@ namespace BasicCal.Controllers
         }
         public IActionResult CalPad(String prop)
         {
+        
         var result = new DataTable().Compute(prop, null);   
-        return Content(result.ToString(), "text/plain");
+        return Content(result.ToString());
         }
         public IActionResult Privacy()
         {
